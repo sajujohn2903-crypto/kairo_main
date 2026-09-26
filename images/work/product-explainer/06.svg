@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000">
+<rect width="800" height="1000" fill="#E7EDE3"/>
+<circle cx="96" cy="720" r="56" fill="none" stroke="#1D201E" stroke-opacity="0.15"/><circle cx="172" cy="559" r="56" fill="none" stroke="#1D201E" stroke-opacity="0.22"/><circle cx="248" cy="423" r="56" fill="none" stroke="#1D201E" stroke-opacity="0.30"/><circle cx="324" cy="332" r="56" fill="none" stroke="#1D201E" stroke-opacity="0.38"/><circle cx="400" cy="300" r="56" fill="none" stroke="#1D201E" stroke-opacity="0.45"/><circle cx="476" cy="332" r="56" fill="none" stroke="#1D201E" stroke-opacity="0.53"/><circle cx="552" cy="423" r="56" fill="none" stroke="#1D201E" stroke-opacity="0.60"/><circle cx="628" cy="559" r="56" fill="none" stroke="#1D201E" stroke-opacity="0.68"/><circle cx="704" cy="720" r="56" fill="#E59B03" stroke="#1D201E" stroke-opacity="0.75"/>
+<text x="32" y="968" font-family="'Inter Tight', Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" letter-spacing="3" fill="#1D201E" opacity=".45">PRODUCT EXPLAINER — 06 — PLACEHOLDER</text>
+</svg>

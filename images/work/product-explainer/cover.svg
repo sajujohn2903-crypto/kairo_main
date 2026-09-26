@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000">
+<rect width="1600" height="1000" fill="#E7EDE3"/>
+<line x1="224.00000000000003" y1="800.0" x2="1376.0" y2="800.0" stroke="#1D201E" stroke-opacity=".3"/><line x1="224.00000000000003" y1="800.0" x2="224.00000000000003" y2="200.0" stroke="#1D201E" stroke-opacity=".3"/><path d="M224.00000000000003 800.0 C1030.4 800.0, 569.6 200.0, 1376.0 200.0" fill="none" stroke="#E59B03" stroke-width="4"/><rect x="214.00000000000003" y="790.0" width="20" height="20" transform="rotate(45 224.00000000000003 800.0)" fill="#1D201E"/><rect x="1366.0" y="190.0" width="20" height="20" transform="rotate(45 1376.0 200.0)" fill="#1D201E"/><line x1="224.00000000000003" y1="800.0" x2="1030.4" y2="800.0" stroke="#1D201E" stroke-opacity=".5" stroke-dasharray="6 6"/><line x1="1376.0" y1="200.0" x2="569.6" y2="200.0" stroke="#1D201E" stroke-opacity=".5" stroke-dasharray="6 6"/>
+<text x="64" y="936" font-family="'Inter Tight', Inter, 'Helvetica Neue', Arial, sans-serif" font-size="19" letter-spacing="3" fill="#1D201E" opacity=".45">PRODUCT EXPLAINER — PLACEHOLDER IMAGE</text>
+</svg>
