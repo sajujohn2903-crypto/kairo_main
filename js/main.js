@@ -28,9 +28,53 @@ const CONFIG = {
     el.href = `mailto:${CONFIG.CONTACT_EMAIL}`;
   });
 
+  /* ---------- Page transitions between pages ----------
+     Leaving: a charcoal panel sweeps up over the page, then we navigate.
+     Arriving: the panel lifts away. */
+  const store = {
+    get: (k) => { try { return sessionStorage.getItem(k); } catch (e) { return null; } },
+    set: (k, v) => { try { sessionStorage.setItem(k, v); } catch (e) {} },
+    del: (k) => { try { sessionStorage.removeItem(k); } catch (e) {} },
+  };
+  const arrivedViaTransition = store.get("kairo-pt") === "1";
+  store.del("kairo-pt");
+  const curtain = document.createElement("div");
+  curtain.className = "pt";
+  curtain.setAttribute("aria-hidden", "true");
+  curtain.innerHTML = "<i></i><span>KAIRO<sup>®</sup></span>";
+  document.body.appendChild(curtain);
+  if (arrivedViaTransition && !reduceMotion) {
+    curtain.classList.add("is-cover");
+    document.documentElement.classList.remove("pt-arrive");
+    requestAnimationFrame(() => requestAnimationFrame(() => curtain.classList.add("is-leave")));
+    setTimeout(() => curtain.classList.remove("is-cover", "is-leave"), 1100);
+  }
+  document.documentElement.classList.remove("pt-arrive");
+  window.addEventListener("pageshow", (e) => {
+    if (e.persisted) curtain.classList.remove("is-enter", "is-cover", "is-leave");
+  });
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest("a[href]");
+    if (!a || e.defaultPrevented || reduceMotion) return;
+    if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    if (a.target && a.target !== "_self") return;
+    if (a.hasAttribute("download")) return;
+    const url = new URL(a.href, location.href);
+    if (url.origin !== location.origin || !/^https?:$/.test(url.protocol)) return;
+    // same page, only the #hash differs: let the browser scroll
+    if (url.pathname === location.pathname && url.search === location.search) return;
+    e.preventDefault();
+    store.set("kairo-pt", "1");
+    curtain.classList.add("is-enter");
+    setTimeout(() => { location.href = url.href; }, 700);
+  });
+
   /* ---------- Loader ---------- */
   const finishLoad = () => document.body.classList.add("is-loaded");
+  const loaderEl = $(".loader");
+  if (arrivedViaTransition && loaderEl) document.body.classList.add("no-loader");
   if (reduceMotion) finishLoad();
+  else if (!loaderEl || arrivedViaTransition) setTimeout(finishLoad, arrivedViaTransition ? 350 : 60);
   else {
     const minTime = new Promise((r) => setTimeout(r, 1300));
     const fonts = document.fonts ? document.fonts.ready : Promise.resolve();
@@ -62,7 +106,7 @@ const CONFIG = {
 
   /* ---------- Active nav link ---------- */
   const navLinks = $$(".nav__link");
-  const sections = navLinks.map((a) => $(a.getAttribute("href"))).filter(Boolean);
+  const sections = navLinks.filter((a) => a.getAttribute("href").startsWith("#")).map((a) => $(a.getAttribute("href"))).filter(Boolean);
   const navObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((e) => {
