@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000">
+<rect width="800" height="1000" fill="#FCCD00"/>
+<line x1="112.00000000000001" y1="800.0" x2="688.0" y2="800.0" stroke="#1D201E" stroke-opacity=".3"/><line x1="112.00000000000001" y1="800.0" x2="112.00000000000001" y2="200.0" stroke="#1D201E" stroke-opacity=".3"/><path d="M112.00000000000001 800.0 C515.2 800.0, 284.8 200.0, 688.0 200.0" fill="none" stroke="#34491E" stroke-width="4"/><rect x="102.00000000000001" y="790.0" width="20" height="20" transform="rotate(45 112.00000000000001 800.0)" fill="#1D201E"/><rect x="678.0" y="190.0" width="20" height="20" transform="rotate(45 688.0 200.0)" fill="#1D201E"/><line x1="112.00000000000001" y1="800.0" x2="515.2" y2="800.0" stroke="#1D201E" stroke-opacity=".5" stroke-dasharray="6 6"/><line x1="688.0" y1="200.0" x2="284.8" y2="200.0" stroke="#1D201E" stroke-opacity=".5" stroke-dasharray="6 6"/>
+<text x="32" y="968" font-family="'Inter Tight', Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" letter-spacing="3" fill="#1D201E" opacity=".45">SOCIAL CAMPAIGN — 06 — PLACEHOLDER</text>
+</svg>
