@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000">
+<rect width="800" height="1000" fill="#E7EDE3"/>
+<rect x="80" y="120" width="640" height="760" fill="none" stroke="#1D201E" stroke-opacity=".5"/><line x1="80" y1="173" x2="720" y2="173" stroke="#1D201E" stroke-opacity=".5"/><circle cx="93" cy="147" r="4" fill="#1D201E" opacity=".5"/><circle cx="107" cy="147" r="4" fill="#1D201E" opacity=".5"/><circle cx="121" cy="147" r="4" fill="#1D201E" opacity=".5"/><rect x="118" y="272" width="320" height="68" fill="#1D201E"/><rect x="118" y="371" width="230" height="68" fill="#1D201E"/><rect x="118" y="515" width="90" height="53" fill="#E59B03"/><circle cx="579" cy="500" r="182" fill="#E59B03" opacity=".9"/>
+<text x="32" y="968" font-family="'Inter Tight', Inter, 'Helvetica Neue', Arial, sans-serif" font-size="12" letter-spacing="3" fill="#1D201E" opacity=".45">LAUNCH LANDING PAGE — 03 — PLACEHOLDER</text>
+</svg>
