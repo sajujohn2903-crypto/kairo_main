@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Movin' Elements — Motion Graphics — KAIRO</title>
+  <meta name="description" content="Motion graphics by KAIRO: logo animation, social motion and explainers." />
+  <meta name="theme-color" content="#1D201E" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Movin' Elements — Motion Graphics — KAIRO" />
+  <meta property="og:description" content="Motion graphics by KAIRO: logo animation, social motion and explainers." />
+  <script>try{if(sessionStorage.getItem("kairo-pt")==="1")document.documentElement.classList.add("pt-arrive")}catch(e){}</script>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/work.css" />
+</head>
+<body data-page="category" data-category="motion">
+  <a class="skip" href="#main">Skip to content</a>
+  <span id="top-of-page"></span>
+
+  <!-- Cursor (desktop only) -->
+  <div class="cursor" aria-hidden="true"><span class="cursor__label"></span></div>
+
+  <!-- Header -->
+  <header class="header" id="top">
+    <a href="index.html" class="logo" aria-label="KAIRO — home">KAIRO<sup>®</sup></a>
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html#work" class="nav__link is-active" aria-current="page">Work</a>
+      <a href="index.html#services" class="nav__link">Services</a>
+      <a href="index.html#about" class="nav__link">About</a>
+    </nav>
+    <button class="btn btn--gold btn--sm header__cta" data-open-form data-cursor="Let's talk">Start a project <span aria-hidden="true">↗</span></button>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <nav aria-label="Mobile">
+      <a href="index.html#work"><em>01</em>Work</a>
+      <a href="index.html#services"><em>02</em>Services</a>
+      <a href="index.html#about"><em>03</em>About</a>
+    </nav>
+    <button class="btn btn--gold" data-open-form>Start a project <span aria-hidden="true">↗</span></button>
+    <p class="meta">Creative studio — UAE / Worldwide</p>
+  </div>
+
+  <main id="main" class="work-main">
+    <!-- Filled in from js/projects.js by js/work.js -->
+    <div id="work-root">
+      <noscript><p style="padding:160px 24px">Please turn on JavaScript to see this page.</p></noscript>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__top">
+      <div>
+        <p class="meta">Get in touch</p>
+        <a class="footer__mail" data-email href="#">hello@yourdomain.com</a>
+      </div>
+      <nav class="footer__nav" aria-label="Footer">
+        <a href="index.html#work">Work</a><a href="index.html#services">Services</a><a href="index.html#about">About</a>
+      </nav>
+      <nav class="footer__nav" aria-label="Social">
+        <a href="#" target="_blank" rel="noopener">Instagram</a><a href="#" target="_blank" rel="noopener">LinkedIn</a><a href="#" target="_blank" rel="noopener">Behance</a>
+      </nav>
+    </div>
+    <div class="footer__word reveal" aria-hidden="true"><span>KAIRO</span></div>
+    <div class="footer__bottom meta">
+      <span>© <span data-year>2026</span> KAIRO®</span>
+      <span>UAE / Worldwide</span>
+      <a href="#top-of-page">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <!-- START A PROJECT (multi-step form) -->
+  <div class="brief" role="dialog" aria-modal="true" aria-labelledby="brief-title" hidden>
+    <div class="brief__panel">
+      <header class="brief__head">
+        <p class="meta" id="brief-title">Start a project</p>
+        <p class="meta brief__count"><span data-step-now>1</span> / <span data-step-total>5</span></p>
+        <button class="brief__close" aria-label="Close">✕</button>
+      </header>
+      <div class="brief__progress" aria-hidden="true"><i></i></div>
+
+      <form class="brief__form" novalidate>
+        <fieldset class="step is-active" data-step="1">
+          <legend>What do you need?</legend>
+          <p class="step__hint">Pick as many as you like.</p>
+          <div class="chips">
+            <label><input type="checkbox" name="need" value="Brand" /><span>Brand</span></label>
+            <label><input type="checkbox" name="need" value="Digital" /><span>Digital</span></label>
+            <label><input type="checkbox" name="need" value="Content" /><span>Content</span></label>
+            <label><input type="checkbox" name="need" value="Growth" /><span>Growth</span></label>
+            <label><input type="checkbox" name="need" value="Launch" /><span>Launch</span></label>
+            <label><input type="checkbox" name="need" value="Not sure yet" /><span>Not sure yet</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="step" data-step="2">
+          <legend>Tell us about your business.</legend>
+          <div class="fields">
+            <label class="field"><span>Company / project name *</span><input name="business" required autocomplete="organization" /></label>
+            <label class="field"><span>Industry</span><input name="industry" /></label>
+            <label class="field"><span>Website or social link</span><input name="website" type="url" placeholder="https://" /></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="step" data-step="3">
+          <legend>What are you hoping to achieve?</legend>
+          <div class="fields">
+            <label class="field"><span>Your goals *</span><textarea name="goals" rows="4" required placeholder="e.g. launch a new product in Q1 and build awareness in the UAE"></textarea></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="step" data-step="4">
+          <legend>Budget & timeline.</legend>
+          <p class="step__hint">Budget (AED)</p>
+          <div class="chips">
+            <label><input type="radio" name="budget" value="5–10K AED" /><span>5–10K</span></label>
+            <label><input type="radio" name="budget" value="10–25K AED" /><span>10–25K</span></label>
+            <label><input type="radio" name="budget" value="25–50K AED" /><span>25–50K</span></label>
+            <label><input type="radio" name="budget" value="50K+ AED" /><span>50K+</span></label>
+            <label><input type="radio" name="budget" value="Not sure yet" /><span>Not sure yet</span></label>
+          </div>
+          <p class="step__hint">Timeline</p>
+          <div class="chips">
+            <label><input type="radio" name="timeline" value="ASAP" /><span>ASAP</span></label>
+            <label><input type="radio" name="timeline" value="1–3 months" /><span>1–3 months</span></label>
+            <label><input type="radio" name="timeline" value="3–6 months" /><span>3–6 months</span></label>
+            <label><input type="radio" name="timeline" value="Flexible" /><span>Flexible</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="step" data-step="5">
+          <legend>Last thing — who are we talking to?</legend>
+          <div class="fields">
+            <label class="field"><span>Anything else we should know?</span><textarea name="description" rows="3"></textarea></label>
+            <label class="field"><span>Your name *</span><input name="name" required autocomplete="name" /></label>
+            <label class="field"><span>Email *</span><input name="email" type="email" required autocomplete="email" /></label>
+            <label class="field"><span>Phone / WhatsApp</span><input name="phone" type="tel" autocomplete="tel" /></label>
+          </div>
+        </fieldset>
+
+        <div class="step step--done" data-step="done">
+          <p class="brief__done">Thank you.</p>
+          <p class="step__hint">We've got your brief and will be in touch shortly.</p>
+        </div>
+
+        <p class="brief__error" role="alert"></p>
+
+        <footer class="brief__nav">
+          <button type="button" class="btn btn--ghost" data-prev>← Back</button>
+          <button type="button" class="btn btn--gold" data-next>Next →</button>
+          <button type="submit" class="btn btn--gold" data-submit>Send brief ↗</button>
+        </footer>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/projects.js"></script>
+  <script src="js/work.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

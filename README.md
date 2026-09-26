@@ -7,14 +7,33 @@ The website for KAIRO, a creative studio in the UAE. It's plain HTML, CSS and Ja
 ```
 kairo-site/
 ├── index.html      The homepage (all sections)
+├── branding.html   "Get Branded!" projects
+├── web-design.html "Web Designs" projects
+├── motion-graphics.html  "Movin' Elements" projects
+├── project.html    One case-study page that shows any project (project.html?p=<id>)
 ├── 404.html        "Page not found" page — GitHub Pages uses it automatically
 ├── css/style.css   All styles, colours and layout
-├── js/main.js      Parallax, animations, menu, cursor and the project form
+├── css/work.css    Extra styles for the work pages and case studies
+├── js/main.js      Parallax, animations, page transitions, menu, cursor and the project form
+├── js/projects.js  The projects: titles, text and image lists (edit this one)
+├── js/work.js      Builds the work pages and case studies from projects.js
+├── images/work/    One folder of images per project
 ├── media/          Hero video in two sizes (2560px and 1920px) and its still frame
 ├── favicon.svg     Browser tab icon
 ├── .nojekyll       Tells GitHub Pages to serve the files as they are
 └── README.md       This file
 ```
+
+## Adding your projects
+
+The three work pages and every case study are built from `js/projects.js`, so you never have to touch the page HTML.
+
+1. Put the project's images in `images/work/<project-id>/`. JPG, PNG, WebP and SVG all work. Keep photos around 2000px wide and under about 500 KB each so pages load quickly.
+2. In `js/projects.js`, find the project and change its `title`, `client`, `year`, `services`, `cover` and the four text sections (`Overview`, `The challenge`, `Our approach`, `The result`).
+3. List its images in `gallery`. `"full"` spans the page width and `"half"` sits two across. A video works too: `{ type: "video", src: "images/work/<id>/clip.mp4" }`.
+4. To add a new project, copy one project block, give it a new `id` and set `category` to `"branding"`, `"web"` or `"motion"`. It appears on the right page automatically.
+
+The images in `images/work/` now are placeholders marked "PLACEHOLDER". Replace them with your real work before going live.
 
 ## Before you go live
 
@@ -35,7 +54,6 @@ const CONFIG = {
 Also worth updating:
 - The social links (Instagram, LinkedIn, Behance) in the footer of `index.html` — search for `href="#" target="_blank"`.
 - The project links in the **Selected work** section once the case study pages exist.
-- The **Insights** entries, which are marked "Coming soon" for now.
 
 ## Put it on GitHub Pages
 
