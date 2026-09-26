@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+<rect width="1600" height="900" fill="#34491E"/>
+<rect x="160" y="108" width="1280" height="684" fill="none" stroke="#FCCD00" stroke-opacity=".5"/><line x1="160" y1="156" x2="1440" y2="156" stroke="#FCCD00" stroke-opacity=".5"/><circle cx="186" cy="132" r="4" fill="#FCCD00" opacity=".5"/><circle cx="200" cy="132" r="4" fill="#FCCD00" opacity=".5"/><circle cx="214" cy="132" r="4" fill="#FCCD00" opacity=".5"/><rect x="237" y="245" width="640" height="62" fill="#FCCD00"/><rect x="237" y="334" width="461" height="62" fill="#FCCD00"/><rect x="237" y="464" width="179" height="48" fill="#E7EDE3"/><circle cx="1158" cy="450" r="164" fill="#E7EDE3" opacity=".9"/>
+<text x="64" y="836" font-family="'Inter Tight', Inter, 'Helvetica Neue', Arial, sans-serif" font-size="19" letter-spacing="3" fill="#FCCD00" opacity=".45">STUDIO WEBSITE — 01 — PLACEHOLDER</text>
+</svg>
