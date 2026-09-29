@@ -5,7 +5,7 @@
 
 const CONFIG = {
   // Where project briefs and the footer "Get in touch" link go.
-  CONTACT_EMAIL: "hello@yourdomain.com",
+  CONTACT_EMAIL: "kairodesigns2026@gmail.com",
 
   // Optional: paste a form endpoint (e.g. Formspree "https://formspree.io/f/xxxxxx")
   // to receive briefs without the visitor's email app opening.
@@ -41,7 +41,7 @@ const CONFIG = {
   const curtain = document.createElement("div");
   curtain.className = "pt";
   curtain.setAttribute("aria-hidden", "true");
-  curtain.innerHTML = "<i></i><span>KAIRO<sup>®</sup></span>";
+  curtain.innerHTML = "<i></i><span>KAIRO</span>";
   document.body.appendChild(curtain);
   if (arrivedViaTransition && !reduceMotion) {
     curtain.classList.add("is-cover");
@@ -68,6 +68,20 @@ const CONFIG = {
     curtain.classList.add("is-enter");
     setTimeout(() => { location.href = url.href; }, 700);
   });
+
+  /* ---------- Always open the homepage at the top ----------
+     Browsers restore the last scroll position on reload, and a shared link
+     can carry a #section. Start at the hero unless the visitor came here
+     from one of our own links (e.g. "Work" on a project page). */
+  if ($(".hero")) {
+    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+    if (!arrivedViaTransition) {
+      if (location.hash) history.replaceState(null, "", location.pathname + location.search);
+      const toTop = () => window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+      toTop();
+      window.addEventListener("load", toTop, { once: true });
+    }
+  }
 
   /* ---------- Loader ---------- */
   const finishLoad = () => document.body.classList.add("is-loaded");
@@ -172,33 +186,33 @@ const CONFIG = {
     });
   });
 
-  /* ---------- Hero video: breathe on screen, close eyes on scroll ----------
-     0–3 s of the video (eyes open, breathing) plays back and forth while the
-     hero is on screen. Scrolling scrubs through the rest (eyes closing), and
-     scrolling back up reverses it. The video is encoded with a keyframe on
-     every frame so scrubbing stays smooth. */
+  /* ---------- Hero: breathe on screen, close eyes on scroll ----------
+     0.5–3 s (eyes open, breathing) plays back and forth while the hero
+     is on screen. Scrolling moves through the rest (eyes closing), and
+     scrolling back up reverses it.
+     Desktop: scrubs the video (encoded with a keyframe on every frame).
+     Phones: draws a sequence of still frames onto a canvas instead, because
+     mobile browsers (iOS Safari especially) won't reliably show a video
+     that is being scrubbed rather than played. */
   const heroEl = $(".hero");
   const video = $(".hero__video");
   if (heroEl && video) {
+    const LOOP_START = 0.5;      // skips the video's fade-in at the very start
     const LOOP_END = 3;          // seconds of "eyes open, breathing"
-    const FPS = 24;
+    const FRAMES = { dir: "media/hero-frames/", count: 121, fps: 12, ext: "webp" };
     let duration = 0;
-    let shown = 0;               // the time currently on screen (smoothed)
-    let idleT = 0;               // position inside the breathing loop
+    let shown = LOOP_START;      // the time currently on screen (smoothed)
+    let idleT = LOOP_START;              // position inside the breathing loop
     let dir = 1;                 // loop direction (1 forward, -1 back)
     let idle = true;
     let last = performance.now();
+    let render = () => {};
+    let started = false;
 
     const heroProgress = () => {
       const r = heroEl.getBoundingClientRect();
       const travel = heroEl.offsetHeight - window.innerHeight;
       return travel > 0 ? clamp(-r.top / travel, 0, 1) : 0;
-    };
-
-    const seek = (t) => {
-      const frame = Math.round(t * FPS) / FPS;
-      if (video.seeking || Math.abs(video.currentTime - frame) < 0.5 / FPS) return;
-      video.currentTime = frame;
     };
 
     const heroTick = (now) => {
@@ -210,12 +224,12 @@ const CONFIG = {
 
       if (duration) {
         if (p <= 0.002) {
-          if (!idle && shown <= LOOP_END + 0.03) { idle = true; idleT = Math.min(shown, LOOP_END); dir = -1; }
+          if (!idle && shown <= LOOP_END + 0.03) { idle = true; idleT = clamp(shown, LOOP_START, LOOP_END); dir = -1; }
           if (idle) {
             if (!reduceMotion) {
               idleT += dir * dt;
               if (idleT >= LOOP_END) { idleT = LOOP_END; dir = -1; }
-              if (idleT <= 0) { idleT = 0; dir = 1; }
+              if (idleT <= LOOP_START) { idleT = LOOP_START; dir = 1; }
             }
             shown = idleT;
           } else {
@@ -226,34 +240,127 @@ const CONFIG = {
           const target = LOOP_END + p * (duration - LOOP_END - 0.05);
           shown = lerp(shown, target, 1 - Math.exp(-dt * 10));
         }
-        seek(shown);
+        render(shown);
       }
       requestAnimationFrame(heroTick);
     };
-
-    const ready = () => {
-      if (duration) return;
-      duration = video.duration || 10;
-      video.classList.add("is-ready");
+    const start = () => {
+      if (started) return;
+      started = true;
       requestAnimationFrame((t) => { last = t; heroTick(t); });
     };
-    // Pick the sharpest file the screen needs: 2560px for large or high-density
-    // desktop screens, 1920px for everything else (including phones)
-    const wantHD = window.innerWidth >= 1000 && window.innerWidth * (window.devicePixelRatio || 1) > 2000;
-    video.src = (wantHD && video.dataset.srcHd) || video.dataset.src;
-    video.pause();
-    if (video.readyState >= 1) ready();
-    else video.addEventListener("loadedmetadata", ready, { once: true });
 
-    // iOS Safari only decodes frames for seeking after the video has played once
-    const prime = () => {
-      const pr = video.play();
-      if (pr && pr.then) pr.then(() => video.pause()).catch(() => {});
+    /* --- Desktop: scrub the video --- */
+    const useVideo = () => {
+      const FPS = 24;
+      render = (t) => {
+        const frame = Math.round(t * FPS) / FPS;
+        if (video.seeking || Math.abs(video.currentTime - frame) < 0.5 / FPS) return;
+        video.currentTime = frame;
+      };
+      const ready = () => {
+        if (duration) return;
+        duration = video.duration || 10;
+        video.classList.add("is-ready");
+        start();
+      };
+      // 2560px for large or high-density desktop screens, 1920px otherwise
+      const wantHD = window.innerWidth >= 1000 && window.innerWidth * (window.devicePixelRatio || 1) > 2000;
+      video.src = (wantHD && video.dataset.srcHd) || video.dataset.src;
+      video.pause();
+      if (video.readyState >= 1) ready();
+      else video.addEventListener("loadedmetadata", ready, { once: true });
+      const prime = () => {
+        const pr = video.play();
+        if (pr && pr.then) pr.then(() => video.pause()).catch(() => {});
+      };
+      prime();
+      ["touchstart", "pointerdown", "scroll"].forEach((ev) =>
+        window.addEventListener(ev, prime, { once: true, passive: true })
+      );
     };
-    prime();
-    ["touchstart", "pointerdown", "scroll"].forEach((ev) =>
-      window.addEventListener(ev, prime, { once: true, passive: true })
-    );
+
+    /* --- Phones: draw still frames on a canvas --- */
+    const useFrames = () => {
+      const canvas = document.createElement("canvas");
+      canvas.className = "hero__canvas";
+      canvas.setAttribute("aria-hidden", "true");
+      video.after(canvas);
+      const ctx = canvas.getContext("2d");
+      const imgs = new Array(FRAMES.count);
+      const src = (i) => `${FRAMES.dir}f${String(i + 1).padStart(3, "0")}.${FRAMES.ext}`;
+      let lastDrawn = -1;
+      let failed = false;
+
+      const size = () => {
+        const d = Math.min(window.devicePixelRatio || 1, 2);
+        canvas.width = Math.round(canvas.clientWidth * d);
+        canvas.height = Math.round(canvas.clientHeight * d);
+        lastDrawn = -1;
+      };
+      const drawCover = (img, alpha) => {
+        const cw = canvas.width, ch = canvas.height;
+        const s = Math.max(cw / img.naturalWidth, ch / img.naturalHeight);
+        const w = img.naturalWidth * s, h = img.naturalHeight * s;
+        ctx.globalAlpha = alpha;
+        ctx.drawImage(img, (cw - w) * 0.5, (ch - h) * 0.3, w, h);
+      };
+      const loaded = (i) => imgs[i] && imgs[i].complete && imgs[i].naturalWidth > 0;
+      render = (t) => {
+        const f = clamp(t * FRAMES.fps, 0, FRAMES.count - 1);
+        if (Math.abs(f - lastDrawn) < 0.02) return;
+        let a = Math.floor(f);
+        while (a > 0 && !loaded(a)) a--;          // nearest frame that has arrived
+        if (!loaded(a)) return;
+        const b = Math.min(a + 1, FRAMES.count - 1);
+        drawCover(imgs[a], 1);
+        if (b !== a && loaded(b) && Math.floor(f) === a) drawCover(imgs[b], f - a); // blend for smoothness
+        ctx.globalAlpha = 1;
+        lastDrawn = f;
+      };
+
+      // Load the breathing loop first, then the rest, a few at a time
+      const order = [...Array(FRAMES.count).keys()];
+      let next = 0, active = 0;
+      const pump = () => {
+        while (active < 6 && next < order.length) {
+          const i = order[next++];
+          const img = new Image();
+          img.decoding = "async";
+          active++;
+          img.onload = () => {
+            active--;
+            if (i === 0) {
+              duration = (FRAMES.count - 1) / FRAMES.fps;
+              size();
+              canvas.classList.add("is-ready");
+              start();
+            }
+            lastDrawn = -1;
+            pump();
+          };
+          img.onerror = () => {
+            active--;
+            if (i === 0 && !failed) {        // frames missing: fall back to the video
+              failed = true;
+              canvas.remove();
+              useVideo();
+              return;
+            }
+            pump();
+          };
+          img.src = src(i);
+          imgs[i] = img;
+        }
+      };
+      window.addEventListener("resize", size);
+      pump();
+    };
+
+    const phonePortrait =
+      window.matchMedia("(hover: none) and (pointer: coarse)").matches || window.innerWidth < 861;
+    if (phonePortrait && window.innerHeight > window.innerWidth) useFrames();
+    else useVideo();
   }
 
   /* ---------- Scroll-driven animation loop ---------- */
