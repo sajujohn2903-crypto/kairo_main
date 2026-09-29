@@ -18,7 +18,7 @@ kairo-site/
 ├── js/projects.js  The projects: titles, text and image lists (edit this one)
 ├── js/work.js      Builds the work pages and case studies from projects.js
 ├── images/work/    One folder of images per project
-├── media/          Hero video in two sizes, its still frame, and hero-frames/ (the phone version)
+├── media/          Hero video in two sizes, its still frame, and hero-frames-a/b.bin (the phone version)
 ├── favicon.svg     Browser tab icon
 ├── .nojekyll       Tells GitHub Pages to serve the files as they are
 └── README.md       This file
@@ -102,10 +102,7 @@ Then do steps 3–5 above.
   ffmpeg -i new.mp4 -an -vf scale=2560:-2 -c:v libx264 -crf 24 -g 1 -pix_fmt yuv420p -movflags +faststart media/kairo-hero-2560.mp4
   ffmpeg -i new.mp4 -an -vf scale=1920:-2 -c:v libx264 -crf 24 -g 1 -pix_fmt yuv420p -movflags +faststart media/kairo-hero-1920.mp4
   ```
-  Phones held upright don't scrub the video, because mobile browsers (iOS Safari especially) won't reliably show it. They use the 121 still frames in `media/hero-frames/`, drawn in sequence. If you swap the video, remake those too:
-  ```bash
-  ffmpeg -i new.mp4 -vf "fps=12,crop=ih*9/16:ih,scale=720:1280" -c:v libwebp -quality 72 media/hero-frames/f%03d.webp
-  ```
+  Phones held upright don't scrub the video, because mobile browsers (iOS Safari especially) won't show a video that's being scrubbed. They draw 121 still frames instead, packed into two files, `media/hero-frames-a.bin` (the breathing loop) and `media/hero-frames-b.bin` (the eyes closing), so there are only two files to upload. If you swap the video, ask for the frames to be remade.
   The breathing loop runs from `LOOP_START` to `LOOP_END` in `js/main.js`. Scrubbing needs a server that supports byte-range requests. GitHub Pages does. Python's built-in server doesn't, so the video won't scrub there.
 - **Cursor labels:** add `data-cursor="View"` to any element to show that word in the cursor on desktop.
 - **Accessibility:** all motion is turned off for visitors whose device is set to reduce motion, and the site can be used with a keyboard alone.
