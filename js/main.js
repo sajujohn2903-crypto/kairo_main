@@ -77,7 +77,14 @@ const CONFIG = {
     if ("scrollRestoration" in history) history.scrollRestoration = "manual";
     if (!arrivedViaTransition) {
       if (location.hash) history.replaceState(null, "", location.pathname + location.search);
-      const toTop = () => window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+      const toTop = () => {
+        // jump without the smooth-scroll animation (works in every browser)
+        const html = document.documentElement;
+        const prev = html.style.scrollBehavior;
+        html.style.scrollBehavior = "auto";
+        window.scrollTo(0, 0);
+        html.style.scrollBehavior = prev;
+      };
       toTop();
       window.addEventListener("load", toTop, { once: true });
     }
@@ -199,7 +206,7 @@ const CONFIG = {
   if (heroEl && video) {
     const LOOP_START = 0.5;      // skips the video's fade-in at the very start
     const LOOP_END = 3;          // seconds of "eyes open, breathing"
-    const FRAMES = { dir: "media/hero-frames/", count: 121, fps: 12, ext: "webp" };
+    const FRAMES = { files: ["media/hero-frames-a.bin", "media/hero-frames-b.bin"], count: 121, fps: 12 };
     let duration = 0;
     let shown = LOOP_START;      // the time currently on screen (smoothed)
     let idleT = LOOP_START;              // position inside the breathing loop
@@ -288,18 +295,22 @@ const CONFIG = {
       video.after(canvas);
       const ctx = canvas.getContext("2d");
       const imgs = new Array(FRAMES.count);
-      const src = (i) => `${FRAMES.dir}f${String(i + 1).padStart(3, "0")}.${FRAMES.ext}`;
       let lastDrawn = -1;
       let failed = false;
+      let cw = 0, ch = 0;
 
+      // Only resize the canvas when its size really changes. iPhones fire
+      // "resize" constantly while the address bar slides in and out, and
+      // resetting a canvas clears it, which made the picture flicker.
       const size = () => {
         const d = Math.min(window.devicePixelRatio || 1, 2);
-        canvas.width = Math.round(canvas.clientWidth * d);
-        canvas.height = Math.round(canvas.clientHeight * d);
+        const w = Math.round(canvas.clientWidth * d), h = Math.round(canvas.clientHeight * d);
+        if (!w || !h || (Math.abs(w - cw) < 2 && Math.abs(h - ch) < 2)) return;
+        canvas.width = cw = w;
+        canvas.height = ch = h;
         lastDrawn = -1;
       };
       const drawCover = (img, alpha) => {
-        const cw = canvas.width, ch = canvas.height;
         const s = Math.max(cw / img.naturalWidth, ch / img.naturalHeight);
         const w = img.naturalWidth * s, h = img.naturalHeight * s;
         ctx.globalAlpha = alpha;
@@ -307,6 +318,7 @@ const CONFIG = {
       };
       const loaded = (i) => imgs[i] && imgs[i].complete && imgs[i].naturalWidth > 0;
       render = (t) => {
+        if (!cw) size();
         const f = clamp(t * FRAMES.fps, 0, FRAMES.count - 1);
         if (Math.abs(f - lastDrawn) < 0.02) return;
         let a = Math.floor(f);
@@ -319,42 +331,48 @@ const CONFIG = {
         lastDrawn = f;
       };
 
-      // Load the breathing loop first, then the rest, a few at a time
-      const order = [...Array(FRAMES.count).keys()];
-      let next = 0, active = 0;
-      const pump = () => {
-        while (active < 6 && next < order.length) {
-          const i = order[next++];
+      // Frames come packed in two files (the breathing loop first, then the
+      // rest) so GitHub uploads stay small and phones make only two requests.
+      // Each file: [count][length × count][webp images…], little-endian uint32.
+      const unpack = (buf, first) => {
+        const view = new DataView(buf);
+        const n = view.getUint32(0, true);
+        let offset = 4 + n * 4;
+        for (let k = 0; k < n; k++) {
+          const len = view.getUint32(4 + k * 4, true);
+          const i = first + k;
           const img = new Image();
-          img.decoding = "async";
-          active++;
           img.onload = () => {
-            active--;
+            if (img.decode) img.decode().catch(() => {}); // decode now, not mid-scroll
+            lastDrawn = -1;
             if (i === 0) {
               duration = (FRAMES.count - 1) / FRAMES.fps;
               size();
               canvas.classList.add("is-ready");
               start();
             }
-            lastDrawn = -1;
-            pump();
           };
-          img.onerror = () => {
-            active--;
-            if (i === 0 && !failed) {        // frames missing: fall back to the video
-              failed = true;
-              canvas.remove();
-              useVideo();
-              return;
-            }
-            pump();
-          };
-          img.src = src(i);
+          img.src = URL.createObjectURL(new Blob([buf.slice(offset, offset + len)], { type: "image/webp" }));
           imgs[i] = img;
+          offset += len;
         }
+        return n;
       };
+      const fail = () => {
+        if (failed) return;
+        failed = true;
+        canvas.remove();
+        useVideo();
+      };
+      const get = (url) => fetch(url).then((r) => { if (!r.ok) throw new Error(r.status); return r.arrayBuffer(); });
+      get(FRAMES.files[0])
+        .then((buf) => {
+          const n = unpack(buf, 0);
+          return get(FRAMES.files[1]).then((b2) => unpack(b2, n));
+        })
+        .catch(() => { if (!loaded(0)) fail(); });
       window.addEventListener("resize", size);
-      pump();
+      window.addEventListener("orientationchange", () => setTimeout(size, 300));
     };
 
     const phonePortrait =
