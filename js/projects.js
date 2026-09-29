@@ -82,7 +82,34 @@ window.KAIRO_WORK = (() => {
   });
 
   const projects = [
-    project("identity-system", "branding", "Identity System", "Brand identity", ["Strategy", "Logo", "Identity system", "Guidelines"]),
+      const projects = [
+    {
+      id: "my-first-project",
+      category: "branding",
+      title: "Opheras",
+      type: "Brand identity",
+      client: "Opheras",
+      year: "2026",
+      services: ["Strategy", "Logo", "Guidelines"],
+      cover: "images/work/brand-refresh/cover.jpg",
+      sections: [
+        { heading: "Overview",      body: "What the project was and who it was for." },
+        { heading: "The challenge", body: "The problem you were solving." },
+        { heading: "Our approach",  body: "How you solved it." },
+        { heading: "The result",    body: "What was delivered." },
+      ],
+      gallery: [
+        { src: "images/work/my-first-project/01.jpg", alt: "Logo on signage", size: "full" },
+        { src: "images/work/my-first-project/02.jpg", alt: "Business cards",  size: "half" },
+        { src: "images/work/my-first-project/03.jpg", alt: "Colour palette",  size: "half" },
+      ],
+    },
+    project("packaging-series", "branding", "Packaging Series", "Packaging", ["Packaging design", "Illustration", "Print"]),
+    project("brand-refresh", "branding", "Brand Refresh", "Rebrand", ["Brand audit", "Identity refresh", "Rollout"]),
+
+    project("studio-website", "web", "Studio Website", "Website", ["UX", "UI design", "Development"]),
+    ...
+  ];
     project("packaging-series", "branding", "Packaging Series", "Packaging", ["Packaging design", "Illustration", "Print"]),
     project("brand-refresh", "branding", "Brand Refresh", "Rebrand", ["Brand audit", "Identity refresh", "Rollout"]),
 
