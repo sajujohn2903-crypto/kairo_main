@@ -25,7 +25,7 @@
   </style>
 </head>
 <body>
-  <a href="./" class="logo" data-home>KAIRO<sup>®</sup></a>
+  <a href="./" class="logo" data-home><img src="media/kairo-logo-light.png" alt="Kairo Design Bureau" width="185" height="240" style="height:52px;width:auto;display:block" /></a>
   <main>
     <h1>404</h1>
     <p>This page wandered off. Let's get you back.</p>
@@ -37,6 +37,7 @@
     var home = location.hostname.endsWith("github.io") && location.pathname.split("/")[1]
       ? "/" + location.pathname.split("/")[1] + "/" : "/";
     document.querySelectorAll("[data-home]").forEach(function (a) { a.href = home; });
+    document.querySelectorAll(".logo img").forEach(function (i) { i.src = home + "media/kairo-logo-light.png"; });
   </script>
 </body>
 </html>
