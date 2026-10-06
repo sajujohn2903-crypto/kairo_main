@@ -82,9 +82,8 @@ window.KAIRO_WORK = (() => {
   });
 
   const projects = [
-      const projects = [
     {
-      id: "my-first-project",
+      id: "opheras",
       category: "branding",
       title: "Opheras",
       type: "Brand identity",
@@ -104,12 +103,6 @@ window.KAIRO_WORK = (() => {
         { src: "images/work/my-first-project/03.jpg", alt: "Colour palette",  size: "half" },
       ],
     },
-    project("packaging-series", "branding", "Packaging Series", "Packaging", ["Packaging design", "Illustration", "Print"]),
-    project("brand-refresh", "branding", "Brand Refresh", "Rebrand", ["Brand audit", "Identity refresh", "Rollout"]),
-
-    project("studio-website", "web", "Studio Website", "Website", ["UX", "UI design", "Development"]),
-    ...
-  ];
     project("packaging-series", "branding", "Packaging Series", "Packaging", ["Packaging design", "Illustration", "Print"]),
     project("brand-refresh", "branding", "Brand Refresh", "Rebrand", ["Brand audit", "Identity refresh", "Rollout"]),
 
