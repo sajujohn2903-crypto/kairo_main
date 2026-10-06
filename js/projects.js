@@ -90,7 +90,7 @@ window.KAIRO_WORK = (() => {
       type: "Brand identity",
       client: "Opheras",
       year: "2026",
-      services: ["Strategy", "Logo", "Guidelines"],
+      services: ["Branding", "Logo", "Guidelines"],
       cover: "images/work/brand-refresh/cover.jpg",
       sections: [
         { heading: "Overview",      body: "What the project was and who it was for." },
