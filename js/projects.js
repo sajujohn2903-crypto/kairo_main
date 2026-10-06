@@ -92,10 +92,10 @@ window.KAIRO_WORK = (() => {
       services: ["Branding", "Logo", "Guidelines"],
       cover: "images/work/brand-refresh/cover.jpg",
       sections: [
-        { heading: "Overview",      body: "What the project was and who it was for." },
-        { heading: "The challenge", body: "The problem you were solving." },
-        { heading: "Our approach",  body: "How you solved it." },
-        { heading: "The result",    body: "What was delivered." },
+        { heading: "Overview",      body: "Opheras is a contemporary real estate brand built around the principles of modern living, architectural excellence, and purposeful design. The objective was to create a refined visual identity that communicates sophistication, trust, and timeless elegance. Every element was carefully designed to reflect the brand’s commitment to quality, simplicity, and attention to detail." },
+        { heading: "Brand Identity", body: "The visual identity of Opheras embraces minimalism through clean geometry, balanced proportions, and a distinctive logomark. The symbol combines fluid forms with structural precision, reflecting the harmony between architectural design and comfortable living. Paired with a modern wordmark, the identity establishes a recognisable and sophisticated brand presence." },
+        { heading: "Typography",  body: "The brand’s visual system is built around three carefully selected colours: Architectural Teal (#448597), Concrete White (#F9F9F9), and Charcoal Grey (#4A4A4A). Together, they communicate stability, clarity, and understated luxury. Clash Display was chosen for its contemporary character and clean structure. Its combination of regular and medium weights creates a consistent typographic hierarchy, reinforcing the brand’s modern architectural aesthetic." },
+        { heading: "Brand Applications",    body: "The Opheras identity was designed to extend seamlessly across physical and digital environments. From stationery, business cards, and employee identification to outdoor advertising, signage, and digital platforms, each application maintains a consistent visual language. The result is a cohesive and adaptable identity system that positions Opheras as a contemporary, premium real estate brand while maintaining simplicity, recognition, and visual impact." },
       ],
       gallery: [
         { src: "images/work/brand-refresh/01.jpg", alt: "Logo on signage", size: "full" },
