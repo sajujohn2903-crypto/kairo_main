@@ -101,6 +101,8 @@ window.KAIRO_WORK = (() => {
         { src: "images/work/brand-refresh/01.jpg", alt: "Logo on signage", size: "full" },
         { src: "images/work/brand-refresh/02.jpg", alt: "Business cards",  size: "half" },
         { src: "images/work/brand-refresh/03.jpg", alt: "Colour palette",  size: "half" },
+        { src: "images/work/brand-refresh/04.jpg", alt: "Logo usage",  size: "half" },
+        { src: "images/work/brand-refresh/05.jpg", alt: "brand identity",  size: "half" },
       ],
     },
     project("packaging-series", "branding", "Packaging Series", "Packaging", ["Packaging design", "Illustration", "Print"]),
