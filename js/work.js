@@ -57,11 +57,11 @@
         <div class="wk-toolbar">
           <p class="meta">Selected projects</p>
           <div class="wk-view" role="group" aria-label="Layout">
-            <button type="button" class="meta" data-view="list" aria-pressed="true">List</button>
-            <button type="button" class="meta" data-view="grid" aria-pressed="false">Grid</button>
+            <button type="button" class="meta" data-view="grid" aria-pressed="true">Grid</button>
+            <button type="button" class="meta" data-view="list" aria-pressed="false">List</button>
           </div>
         </div>
-        <ol class="wk-list" data-view="list">
+        <ol class="wk-list" data-view="grid">
           ${list.map((p, i) => `
             <li class="wk-item reveal">
               <a class="wk-row" href="project.html?p=${encodeURIComponent(p.id)}" data-cursor="View" data-i="${i}">
@@ -96,17 +96,19 @@
     const listEl = $(".wk-list");
     const btns = $$(".wk-view button");
     let saved = null;
-    try { saved = sessionStorage.getItem("kairo-view"); } catch (e) {}
+    try { saved = sessionStorage.getItem("kairo-layout"); } catch (e) {}
     const set = (v) => {
       listEl.dataset.view = v;
       btns.forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.view === v)));
       document.body.classList.toggle("wk-grid-view", v === "grid");
-      try { sessionStorage.setItem("kairo-view", v); } catch (e) {}
+      try { sessionStorage.setItem("kairo-layout", v); } catch (e) {}
     };
     btns.forEach((b) => b.addEventListener("click", () => {
       listEl.classList.add("is-switching");
       setTimeout(() => { set(b.dataset.view); listEl.classList.remove("is-switching"); }, 280);
     }));
+    // Grid is the default; a visitor's own choice is remembered while they browse
+    document.body.classList.add("wk-grid-view");
     if (saved === "grid" || saved === "list") set(saved);
   };
 
@@ -183,9 +185,17 @@
 
       <section class="pj-study">
         ${(p.sections || []).map((s, i) => `
-          <div class="pj-block">
-            <p class="pj-block__label reveal"><span>${pad(i + 1)}</span>${esc(s.heading)}</p>
-            <p class="pj-block__body reveal">${esc(s.body)}</p>
+          <div class="pj-block reveal">
+            <h2 class="pj-block__head">
+              <button type="button" class="pj-block__toggle" aria-expanded="false" aria-controls="pj-sec-${i}" data-cursor="Read">
+                <span class="pj-block__num">${pad(i + 1)}</span>
+                <span class="pj-block__title">${esc(s.heading)}</span>
+                <span class="pj-block__icon" aria-hidden="true"></span>
+              </button>
+            </h2>
+            <div class="pj-block__panel" id="pj-sec-${i}" role="region">
+              <div><p class="pj-block__body">${esc(s.body)}</p></div>
+            </div>
           </div>`).join("")}
       </section>
 
@@ -222,7 +232,27 @@
 
     document.title = `${p.title} — ${cat.title} — KAIRO`;
     setupProgress();
+    setupStudy();
     setupLightbox(gallery, p.title);
+  };
+
+  // Case-study sections: only the titles show; click one to drop its text down
+  const setupStudy = () => {
+    const blocks = $$(".pj-block");
+    blocks.forEach((block) => {
+      const btn = $(".pj-block__toggle", block);
+      btn.addEventListener("click", () => {
+        const open = !block.classList.contains("is-open");
+        blocks.forEach((b) => {
+          b.classList.remove("is-open");
+          $(".pj-block__toggle", b).setAttribute("aria-expanded", "false");
+          $(".pj-block__toggle", b).dataset.cursor = "Read";
+        });
+        block.classList.toggle("is-open", open);
+        btn.setAttribute("aria-expanded", String(open));
+        btn.dataset.cursor = open ? "Close" : "Read";
+      });
+    });
   };
 
   const setupProgress = () => {
