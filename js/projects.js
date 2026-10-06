@@ -109,7 +109,27 @@ window.KAIRO_WORK = (() => {
         { src: "images/work/brand-refresh/opheras_7.jpg", alt: "Final",  size: "full" },
       ],
     },
-    project("packaging-series", "branding", "Packaging Series", "Packaging", ["Packaging design", "Illustration", "Print"]),
+        {
+      id: "Cafe Branding",
+      category: "branding",
+      title: "Luno Cafe",
+      type: "Brand identity",
+      client: "Client name",
+      year: "2026",
+      services: ["Branding", "Logo", "Guidelines"],
+      cover: "images/work/project-name/cover.jpg",
+      sections: [
+        { heading: "Overview",      body: "Your overview text." },
+        { heading: "The challenge", body: "Your challenge text." },
+        { heading: "Our approach",  body: "Your approach text." },
+        { heading: "The result",    body: "Your result text." },
+      ],
+      gallery: [
+        { src: "images/work/project-name/01.jpg", alt: "Short description", size: "full" },
+        { src: "images/work/project-name/02.jpg", alt: "Short description", size: "half" },
+        { src: "images/work/project-name/03.jpg", alt: "Short description", size: "half" },
+      ],
+    },
     project("brand-refresh", "branding", "Brand Refresh", "Rebrand", ["Brand audit", "Identity refresh", "Rollout"]),
 
     project("studio-website", "web", "Studio Website", "Website", ["UX", "UI design", "Development"]),
