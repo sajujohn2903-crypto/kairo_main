@@ -20,7 +20,7 @@ window.KAIRO_WORK = (() => {
       index: "01",
       title: "Get Branded!",
       tag: "Branding",
-      intro: "Identity systems, packaging and brand refreshes — built to be recognised at a glance.",
+      intro: "Identity systems, packaging and brand refreshes, built to be recognised at a glance.",
     },
     {
       id: "web",
