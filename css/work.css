@@ -173,7 +173,8 @@ body.is-loaded .pj-cover::after { transform: scaleY(0); }
 .pj-block:last-child { border-bottom: 1px solid var(--line); }
 .pj-block__label { display: flex; gap: 14px; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--white); padding-top: .5em; }
 .pj-block__label span { color: var(--gold); }
-.pj-block__body { font-size: clamp(19px, 1.9vw, 28px); line-height: 1.4; letter-spacing: -.01em; max-width: 34ch; }
+/* Case-study paragraph text. Change the font-size number to make it bigger or smaller. */
+.pj-block__body { font-size: 16px; line-height: 1.7; max-width: 62ch; color: rgba(231, 237, 227, .82); }
 .pj-block__body.reveal { transition-delay: .08s; }
 @media (max-width: 700px) { .pj-block { grid-template-columns: 1fr; gap: 14px; } }
 
