@@ -98,9 +98,9 @@ window.KAIRO_WORK = (() => {
         { heading: "The result",    body: "What was delivered." },
       ],
       gallery: [
-        { src: "images/work/my-first-project/01.jpg", alt: "Logo on signage", size: "full" },
-        { src: "images/work/my-first-project/02.jpg", alt: "Business cards",  size: "half" },
-        { src: "images/work/my-first-project/03.jpg", alt: "Colour palette",  size: "half" },
+        { src: "images/work/brand-refresh/01.jpg", alt: "Logo on signage", size: "full" },
+        { src: "images/work/brand-refresh/02.jpg", alt: "Business cards",  size: "half" },
+        { src: "images/work/brand-refresh/03.jpg", alt: "Colour palette",  size: "half" },
       ],
     },
     project("packaging-series", "branding", "Packaging Series", "Packaging", ["Packaging design", "Illustration", "Print"]),
