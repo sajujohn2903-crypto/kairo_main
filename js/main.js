@@ -5,7 +5,7 @@
 
 const CONFIG = {
   // Where project briefs and the footer "Get in touch" link go.
-  CONTACT_EMAIL: "kairodesigns2026@gmail.com",
+  CONTACT_EMAIL: "contact@kairodesigns.org",
 
   // Optional: paste a form endpoint (e.g. Formspree "https://formspree.io/f/xxxxxx")
   // to receive briefs without the visitor's email app opening.
