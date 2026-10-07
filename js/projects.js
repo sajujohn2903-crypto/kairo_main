@@ -110,14 +110,14 @@ window.KAIRO_WORK = (() => {
       ],
     },
         {
-      id: "Cafe Branding",
+      id: "luno-cafe",
       category: "branding",
       title: "Luno Cafe",
       type: "Brand identity",
-      client: "Client name",
+      client: "Luno Cafe",
       year: "2026",
-      services: ["Branding", "Logo", "Guidelines"],
-      cover: "images/work/project-name/cover.jpg",
+      services: ["Branding", "Logo", "Packaging"],
+      cover: "images/work/luno-cafe/cover.jpg",
       sections: [
         { heading: "Overview",      body: "Your overview text." },
         { heading: "The challenge", body: "Your challenge text." },
@@ -125,11 +125,16 @@ window.KAIRO_WORK = (() => {
         { heading: "The result",    body: "Your result text." },
       ],
       gallery: [
-        { src: "images/work/project-name/01.jpg", alt: "Short description", size: "full" },
-        { src: "images/work/project-name/02.jpg", alt: "Short description", size: "half" },
-        { src: "images/work/project-name/03.jpg", alt: "Short description", size: "half" },
+        { src: "images/work/luno-cafe/01.jpg", alt: "Luno Cafe menu cover with a gold crescent, and the logo construction grid", size: "full" },
+        { src: "images/work/luno-cafe/02.jpg", alt: "Luno Cafe colour palette and typography",                                size: "full" },
+        { src: "images/work/luno-cafe/03.jpg", alt: "Luno Cafe branded coffee cup and chocolate cake",                        size: "full" },
+        { src: "images/work/luno-cafe/04.jpg", alt: "Luno Cafe logo concept, with materials and textures",                    size: "full" },
+        { src: "images/work/luno-cafe/05.jpg", alt: "Luno Cafe interior with illuminated wall sign",                          size: "full" },
+        { src: "images/work/luno-cafe/06.jpg", alt: "Luno Cafe coffee bar interior in warm light",                            size: "full" },
+        { src: "images/work/luno-cafe/07.jpg", alt: "Luno Cafe packaging: takeaway cup, bag, box and coaster",                size: "full" },
       ],
     },
+     
     project("brand-refresh", "branding", "Brand Refresh", "Rebrand", ["Brand audit", "Identity refresh", "Rollout"]),
 
     project("studio-website", "web", "Studio Website", "Website", ["UX", "UI design", "Development"]),
