@@ -10,7 +10,7 @@ const CONFIG = {
   // Optional: paste a form endpoint (e.g. Formspree "https://formspree.io/f/xxxxxx")
   // to receive briefs without the visitor's email app opening.
   // Leave empty to fall back to a pre-filled email.
-  FORM_ENDPOINT: "",
+  FORM_ENDPOINT: "https://formspree.io/f/mwlvlvqb",
 };
 
 (() => {
