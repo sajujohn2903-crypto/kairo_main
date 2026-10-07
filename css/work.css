@@ -167,6 +167,13 @@ body.is-loaded .wk-w > span { transform: none; }
   transform-origin: top; transition: transform 1.4s var(--ease-in-out) .35s;
 }
 body.is-loaded .pj-cover::after { transform: scaleY(0); }
+/* Phones and narrow screens: show the whole cover image, uncropped.
+   (Desktop keeps the tall, cropped cover with parallax.) */
+@media (max-width: 860px) {
+  .pj-cover { height: auto; }
+  .pj-cover__inner { position: static; transform: none !important; }
+  .pj-cover img, .pj-cover video { height: auto; object-fit: contain; }
+}
 
 .pj-study { padding: var(--section) var(--gutter) calc(var(--section) * .6); max-width: 1400px; }
 .pj-block { border-top: 1px solid var(--line); }
