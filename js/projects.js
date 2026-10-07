@@ -143,7 +143,7 @@ window.KAIRO_WORK = (() => {
       client: "RYNX",
       year: "2026",
       services: ["Branding", "Logo", "Packaging"],
-      cover: "images/work/rynx/cover.jpg",
+      cover: "images/work/rynx/01.jpg",
       sections: [
         { heading: "Overview",      body: "RYNX is a modern streetwear identity built around confidence, simplicity, and urban culture. The brand takes a minimal approach to fashion, combining versatile everyday essentials with a bold visual presence. The objective was to create an identity that feels contemporary and adaptable—strong enough to stand on its own while remaining understated enough to live naturally across clothing, packaging, digital platforms, and the street." },
         { heading: "Brand Identity", body: "At the centre of RYNX is a condensed typographic wordmark designed to feel direct, structured, and instantly recognisable. Its tall proportions give the identity a strong visual presence without relying on unnecessary graphic elements. A predominantly black-and-white system reinforces the minimal direction, allowing typography, photography, and the clothing itself to become the focus. Occasional red accents introduce energy and give the brand another layer of expression when needed." },
@@ -151,7 +151,7 @@ window.KAIRO_WORK = (() => {
         { heading: "Brand Application",    body: "The identity was designed to remain recognisable whether it appears as a large graphic across the back of a T-shirt or as a small label stitched into a garment. From apparel and packaging to shopping bags and digital applications, each touchpoint follows the same visual principles—creating a cohesive brand system that can grow alongside future collections. The result is a streetwear identity that feels minimal, confident, versatile, and unmistakably RYNX." },
       ],
       gallery: [
-        { src: "images/work/rynx/01.jpg", alt: "RYNX campaign image with five models in streetwear",        size: "full" },
+        { src: "images/work/rynx/cover.jpg", alt: "RYNX campaign image with five models in streetwear",        size: "full" },
         { src: "images/work/rynx/02.jpg", alt: "RYNX brand story: about the brand and brand mission",       size: "half" },
         { src: "images/work/rynx/03.jpg", alt: "RYNX Modern Streetwear logo on black",                      size: "half" },
         { src: "images/work/rynx/04.jpg", alt: "RYNX woven neck label inside a black sweatshirt",           size: "full" },
