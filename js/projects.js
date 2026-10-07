@@ -191,7 +191,70 @@ window.KAIRO_WORK = (() => {
         { src: "images/work/kairo-site/11.jpg", alt: "Footer with the Kairo wordmark", size: "half" },
       ],
     },
-    project("online-store", "web", "Online Store", "E-commerce", ["UX", "UI design", "Shop setup"]),
+    {
+  slug: 'food-delivery-app',
+  title: 'Food Delivery App',
+  category: 'WEB DESIGNS',
+  discipline: 'Mobile App · UI/UX Design',
+  platform: 'iOS',
+  year: '', // add the year
+  cover: '/work/food-delivery-app/food-delivery-app_00-cover.jpg',
+  summary:
+    'A food ordering app that takes a meal from menu to doorstep in five screens.',
+  sections: [
+    {
+      title: 'Overview',
+      body: 'A food ordering app that takes a meal from menu to doorstep in five screens. Warm neutrals and a single dark accent keep the food photography as the loudest thing on screen.',
+    },
+    {
+      title: 'The Challenge',
+      body: 'Ordering apps tend to bury the decision under banners, offers and nested menus. The aim was a flow where a hungry user can pick a meal, see exactly what it costs and know when it arrives, without any detours.',
+    },
+    {
+      title: 'The Approach',
+      body: 'Two menu screens feed one bag, and from there the path is linear: review, pay, confirm. Each menu card shows a photo, name, calories, a one-line description and the price, so a meal can be added straight from the list. A floating tab bar keeps Quick Bites, Healthy Diet and Desserts one tap apart.',
+    },
+    {
+      title: 'Checkout',
+      body: 'The checkout leads with the delivery address, a mapped route and a 15-minute estimate. Meal, tax, delivery and promo discount are itemised above the total, and the pay button repeats the final amount.',
+    },
+    {
+      title: 'Order Confirmation',
+      body: 'The confirmation screen shows who is delivering (name, vehicle plate, message and call shortcuts), when, and where to. It ends on a single action: Track Your Order.',
+    },
+    {
+      title: 'Visual Design',
+      body: 'Five colours: cream background, sand cards, tan image tiles, cocoa for buttons and the tab bar, black for headings and icons. Headings are in Outfit and close with a full stop; body text is in Inter. Buttons and the tab bar are pill-shaped, and the plates overlap their cards.',
+    },
+  ],
+  gallery: [
+    {
+      src: '/work/food-delivery-app/food-delivery-app_01-user-flow.jpg',
+      alt: 'All five app screens in order, from menu to order placed',
+      caption: 'User flow: one order, five screens.',
+    },
+    {
+      src: '/work/food-delivery-app/food-delivery-app_02-menu-browsing.jpg',
+      alt: 'Quick Bites and Healthy Diet menu screens with numbered callouts',
+      caption: 'Menu browsing: calories, description and price on every card.',
+    },
+    {
+      src: '/work/food-delivery-app/food-delivery-app_03-bag-and-checkout.jpg',
+      alt: 'Meals Added and Payment & Delivery screens with numbered callouts',
+      caption: 'Bag and checkout: route, itemised total and the amount on the pay button.',
+    },
+    {
+      src: '/work/food-delivery-app/food-delivery-app_04-order-confirmation.jpg',
+      alt: 'Order Placed screen with the courier card and delivery card enlarged',
+      caption: 'Order confirmation: who is delivering, when, and where to.',
+    },
+    {
+      src: '/work/food-delivery-app/food-delivery-app_05-design-system.jpg',
+      alt: 'Colour palette, type samples and UI components from the app',
+      caption: 'Design system: five colours, two typefaces.',
+    },
+  ],
+},
     project("launch-landing-page", "web", "Launch Landing Page", "Landing page", ["Copy", "UI design", "Build"]),
 
     project("logo-animation", "motion", "Logo Animation", "Motion identity", ["Motion design", "Sound", "Export kit"]),
