@@ -20,7 +20,7 @@ window.KAIRO_WORK = (() => {
       index: "01",
       title: "Get Branded!",
       tag: "Branding",
-      intro: "Identity systems, packaging and brand refreshes, built to be recognised at a glance.",
+      intro: "Logos, identity systems, packaging and rebrands for businesses that want to be recognised at a glance.",
     },
     {
       id: "web",
@@ -28,7 +28,7 @@ window.KAIRO_WORK = (() => {
       index: "02",
       title: "Web Designs",
       tag: "Designing",
-      intro: "Websites and digital experiences designed around real people, and built to perform.",
+      intro: "Websites and apps, designed around the people who use them.",
     },
     {
       id: "motion",
@@ -36,7 +36,7 @@ window.KAIRO_WORK = (() => {
       index: "03",
       title: "Movin' Elements",
       tag: "Motion Graphics",
-      intro: "Logo animation, social motion and explainers that give a brand its rhythm.",
+      intro: "Logo animations, social videos and explainers for brands that need to move on screen.",
     },
   ];
 
@@ -92,10 +92,10 @@ window.KAIRO_WORK = (() => {
       services: ["Branding", "Logo", "Guidelines"],
       cover: "images/work/brand-refresh/cover.jpg",
       sections: [
-        { heading: "Overview",      body: "Opheras is a contemporary real estate brand built around the principles of modern living, architectural excellence, and purposeful design. The objective was to create a refined visual identity that communicates sophistication, trust, and timeless elegance. Every element was carefully designed to reflect the brand’s commitment to quality, simplicity, and attention to detail." },
-        { heading: "Brand Identity", body: "The visual identity of Opheras embraces minimalism through clean geometry, balanced proportions, and a distinctive logomark. The symbol combines fluid forms with structural precision, reflecting the harmony between architectural design and comfortable living. Paired with a modern wordmark, the identity establishes a recognisable and sophisticated brand presence." },
-        { heading: "Typography",  body: "The brand’s visual system is built around three carefully selected colours: Architectural Teal (#448597), Concrete White (#F9F9F9), and Charcoal Grey (#4A4A4A). Together, they communicate stability, clarity, and understated luxury. Clash Display was chosen for its contemporary character and clean structure. Its combination of regular and medium weights creates a consistent typographic hierarchy, reinforcing the brand’s modern architectural aesthetic." },
-        { heading: "Brand Applications",    body: "The Opheras identity was designed to extend seamlessly across physical and digital environments. From stationery, business cards, and employee identification to outdoor advertising, signage, and digital platforms, each application maintains a consistent visual language. The result is a cohesive and adaptable identity system that positions Opheras as a contemporary, premium real estate brand while maintaining simplicity, recognition, and visual impact." },
+        { heading: "Overview",      body: "Opheras is a real estate brand focused on modern homes and good architecture. They needed an identity that would come across as polished and trustworthy, and still look right in ten years' time. We kept every element simple and spent our time on the details." },
+        { heading: "Brand Identity", body: "The identity is deliberately minimal. The logomark pairs flowing curves with strict geometry, a nod to the balance between precise architecture and a home that is comfortable to live in. Set beside a modern wordmark, it gives Opheras a presence that is easy to recognise." },
+        { heading: "Typography",  body: "The palette has three colours: Architectural Teal (#448597), Concrete White (#F9F9F9) and Charcoal Grey (#4A4A4A). Together they feel steady, clear and quietly premium. For type we chose Clash Display, a contemporary face with a clean structure. Its regular and medium weights give a consistent hierarchy that suits the brand's architectural feel." },
+        { heading: "Brand Applications",    body: "We designed the identity to work as well in print as it does on screen. Stationery, business cards, staff ID, outdoor advertising, signage and digital platforms all follow the same rules. The system is flexible enough to grow with the business, while staying simple and recognisable wherever it appears." },
       ],
       gallery: [
         { src: "images/work/brand-refresh/01.jpg", alt: "Logo on signage", size: "full" },
@@ -119,10 +119,10 @@ window.KAIRO_WORK = (() => {
       services: ["Branding", "Logo", "Packaging"],
       cover: "images/work/luno-cafe/cover.jpg",
       sections: [
-        { heading: "Overview",      body: "LUNO Café is a premium café concept built around warmth, intimacy, and the quiet atmosphere of the night. The identity was designed to move away from the typical bright, casual coffee-shop aesthetic and create something more refined and experience-led. Inspired by lunar forms, warm light, and rich natural materials, the brand brings together coffee, conversation, and atmosphere within a distinctive visual world." },
-        { heading: "Logo and Concept", body: "The LUNO identity draws its inspiration from the changing forms of the moon. The circular form of the letter “O” became the foundation for exploring the full moon, crescent, and eclipse, eventually creating a subtle celestial language around the brand. An elegant serif wordmark gives LUNO its premium character, while the lunar-inspired elements provide a recognisable motif that can extend beyond the logo into patterns, packaging, interiors, and other brand touchpoints." },
-        { heading: "Visual Language",  body: "The visual system combines deep blacks, espresso browns, muted neutrals, and warm bronze tones to recreate the atmosphere of a softly lit café at night. Serif typography brings elegance and personality to the identity, balanced by a clean sans-serif for functional communication. Material choices such as dark wood, stone, textured surfaces, and brushed metallic finishes further extend the identity into the physical environment, creating a brand that feels tactile, warm, and sophisticated." },
-        { heading: "Brand Experience",    body: "LUNO was designed as an experience that extends from the first visual impression to the physical café itself. The identity carries consistently across cups, packaging, menus, signage, merchandise, and interior spaces. Low lighting, warm materials, restrained graphics, and celestial details work together to create an environment made for slowing down—positioning LUNO as a place for coffee, conversation, and connection." },
+        { heading: "Overview",      body: "LUNO Café is a premium café concept built around warmth and the calm of the evening. Most coffee shops go bright and casual; we wanted LUNO to feel slower and more considered, a place people visit for the atmosphere as much as the coffee. The look draws on the shapes of the moon, warm light and rich natural materials." },
+        { heading: "Logo and Concept", body: "The idea started with the letter O. Its round shape let us play with the phases of the moon, from full moon to crescent to eclipse, and these became a small set of celestial marks for the brand. An elegant serif wordmark sets the premium tone, and the moon shapes give LUNO a motif that works well beyond the logo, on patterns, packaging and in the café itself." },
+        { heading: "Visual Language",  body: "Deep black, espresso brown, muted neutrals and warm bronze are there to recall a softly lit café at night. A serif typeface gives the brand its character, while a clean sans-serif handles menus and practical information. In the space, dark wood, stone, textured surfaces and brushed metal carry the identity into things you can actually touch." },
+        { heading: "Brand Experience",    body: "We treated LUNO as one experience, from the first look at the logo to sitting down inside. Cups, packaging, menus, signage, merchandise and the interior all speak the same language. Low lighting, warm materials, quiet graphics and small celestial details make it somewhere to slow down, talk and stay a while." },
       ],
       gallery: [
         { src: "images/work/luno-cafe/01.jpg", alt: "Luno Cafe menu cover with a gold crescent, and the logo construction grid", size: "full" },
@@ -145,10 +145,10 @@ window.KAIRO_WORK = (() => {
       services: ["Branding", "Logo", "Packaging"],
       cover: "images/work/rynx/01.jpg",
       sections: [
-        { heading: "Overview",      body: "RYNX is a modern streetwear identity built around confidence, simplicity, and urban culture. The brand takes a minimal approach to fashion, combining versatile everyday essentials with a bold visual presence. The objective was to create an identity that feels contemporary and adaptable—strong enough to stand on its own while remaining understated enough to live naturally across clothing, packaging, digital platforms, and the street." },
-        { heading: "Brand Identity", body: "At the centre of RYNX is a condensed typographic wordmark designed to feel direct, structured, and instantly recognisable. Its tall proportions give the identity a strong visual presence without relying on unnecessary graphic elements. A predominantly black-and-white system reinforces the minimal direction, allowing typography, photography, and the clothing itself to become the focus. Occasional red accents introduce energy and give the brand another layer of expression when needed." },
-        { heading: "Visual Language",  body: "RYNX uses contrast as its primary visual language—black against white, oversized typography against restrained layouts, and minimal garments against urban environments. The monochromatic system carries naturally across garment labels, hang tags, tote bags, packaging, business cards, and digital applications. Rather than relying on decoration, the identity creates impact through scale, spacing, composition, and repetition." },
-        { heading: "Brand Application",    body: "The identity was designed to remain recognisable whether it appears as a large graphic across the back of a T-shirt or as a small label stitched into a garment. From apparel and packaging to shopping bags and digital applications, each touchpoint follows the same visual principles—creating a cohesive brand system that can grow alongside future collections. The result is a streetwear identity that feels minimal, confident, versatile, and unmistakably RYNX." },
+        { heading: "Overview",      body: "RYNX is a streetwear brand rooted in city culture. The clothes are simple, versatile everyday pieces, so the identity had to be strong enough to stand on its own but restrained enough to sit naturally on a garment, a box or a phone screen." },
+        { heading: "Brand Identity", body: "Everything starts with a condensed wordmark. Its tall letters make it direct and easy to spot, with no need for extra graphics. The system is mostly black and white, which leaves room for the type, the photography and the clothes themselves. A touch of red comes in now and then when the brand needs more energy." },
+        { heading: "Visual Language",  body: "Contrast does most of the work: black against white, oversized type against plain layouts, simple garments against busy streets. Because the system is monochrome, it moves easily onto labels, swing tags, tote bags, packaging, business cards and screens. The impact comes from scale, spacing and repetition rather than decoration." },
+        { heading: "Brand Application",    body: "The identity had to hold up as a large print across the back of a T-shirt and as a small label stitched inside a collar. Clothing, packaging, shopping bags and digital all follow the same rules, so the system can take on future collections without being redesigned. The finished identity is minimal and confident, and clearly RYNX." },
       ],
       gallery: [
         { src: "images/work/rynx/cover.jpg", alt: "RYNX campaign image with five models in streetwear",        size: "full" },
@@ -171,11 +171,11 @@ window.KAIRO_WORK = (() => {
       services: ["Web design", "Motion", "Development"],
       cover: "images/work/kairo-site/cover.jpg",
       sections: [
-        { heading: "Overview", body: "Kairo Design Bureau needed a home of its own: a site that shows how the studio thinks before a visitor has read a word. We designed and built it ourselves between 23 September and 7 October 2026. It is one scrolling homepage, three discipline pages and a case-study template, hosted on GitHub Pages." },
+        { heading: "Overview", body: "We wanted a website that shows how the studio thinks before a visitor has read a word. We designed and built it ourselves between 23 September and 7 October 2026: one scrolling homepage, three pages of work and a case-study template, all hosted on GitHub Pages." },
         { heading: "The brief", body: "The brief was short: minimal, premium, easy to navigate, with motion that follows the scroll, in five brand colours. Two constraints shaped everything else. The site had to run as plain files on GitHub Pages with no build step, so the studio could update it from a browser. And nothing could be invented: no stock photos, no placeholder clients, no made-up numbers." },
         { heading: "How we worked", body: "We skipped static mock-ups and designed in the browser. Every round followed the same loop: publish a working preview, open it on a desktop and a phone, change only what was flagged, upload. The copy was edited directly on the live preview. The design system stayed small on purpose: charcoal with one gold accent per screen, Inter Tight for headlines and Inter for text, square edges, hairline rules, and one easing curve for every movement." },
         { heading: "The hero", body: "The first idea for the hero was a real-time 3D bowerbird that watches the cursor. For launch we chose something lighter that makes the same point: a film of the character that breathes while you are on the first screen and closes its eyes as you scroll away. On desktop the scroll scrubs a video. The iPhone would not repaint a video while it was being scrubbed, so phones draw the same film from 121 still frames instead, packed into two files." },
-        { heading: "Where it landed", body: "Testing on real devices caught two problems: the page sometimes opened part-way down, and the hero froze on iPhone. Both were fixed. The work pages came next: each discipline has its own page, and every case study uses one template fed by a single data file, so adding a project means adding a block of text and a folder of images. The site is live, and the studio's first client projects are already in it." },
+        { heading: "Where it landed", body: "Testing on real phones and laptops turned up two problems. The page sometimes opened part-way down, and the hero froze on iPhone. Both were fixed. The work pages came next. Each discipline has its own page, and every case study uses the same template, so adding a project means adding some text and a folder of images. The site is live, and our first client projects are already on it." },
       ],
       gallery: [
         { src: "images/work/kairo-site/01.jpg", alt: "The brief: what the site had to do, the five-colour palette and the ground rules", size: "half" },
@@ -201,12 +201,12 @@ window.KAIRO_WORK = (() => {
       services: ["UX design", "UI design", "Mobile app"],
       cover: "images/work/food-delivery-app/cover.jpg",
       sections: [
-        { heading: "Overview", body: "A food ordering app that takes a meal from menu to doorstep in five screens. Warm neutrals and a single dark accent keep the food photography as the loudest thing on screen." },
-        { heading: "The challenge", body: "Ordering apps tend to bury the decision under banners, offers and nested menus. The aim was a flow where a hungry user can pick a meal, see exactly what it costs and know when it arrives, without any detours." },
-        { heading: "The approach", body: "Two menu screens feed one bag, and from there the path is linear: review, pay, confirm. Each menu card shows a photo, name, calories, a one-line description and the price, so a meal can be added straight from the list. A floating tab bar keeps Quick Bites, Healthy Diet and Desserts one tap apart." },
-        { heading: "Checkout", body: "The checkout leads with the delivery address, a mapped route and a 15-minute estimate. Meal, tax, delivery and promo discount are itemised above the total, and the pay button repeats the final amount." },
-        { heading: "Order confirmation", body: "The confirmation screen shows who is delivering (name, vehicle plate, message and call shortcuts), when, and where to. It ends on a single action: Track Your Order." },
-        { heading: "Visual design", body: "Five colours: cream background, sand cards, tan image tiles, cocoa for buttons and the tab bar, black for headings and icons. Headings are in Outfit and close with a full stop; body text is in Inter. Buttons and the tab bar are pill-shaped, and the plates overlap their cards." },
+        { heading: "Overview", body: "A concept for a food ordering app that gets you from the menu to a delivered meal in five screens. The colours are warm and muted, with one dark accent, so the food photos are what stand out." },
+        { heading: "The challenge", body: "Many ordering apps hide the actual choice behind banners, offers and menus inside menus. We wanted a hungry person to be able to pick a meal, see exactly what it costs and know when it will arrive, with nothing in the way." },
+        { heading: "The approach", body: "There are two menu screens and one bag. After that the route is straight: review, pay, confirm. Each menu card has a photo, the name, calories, a short description and the price, so you can add a meal without opening it. A floating tab bar switches between Quick Bites, Healthy Diet and Desserts in one tap." },
+        { heading: "Checkout", body: "Checkout opens with the delivery address, the route on a map and an estimated time of 15 minutes. The meal, tax, delivery fee and any promo discount are listed above the total, and the pay button shows the final amount again, so there are no surprises." },
+        { heading: "Order confirmation", body: "Once the order is placed, the screen shows who is delivering it, with their name, vehicle plate and buttons to message or call them, along with the time and the address. There is one button at the bottom: Track Your Order." },
+        { heading: "Visual design", body: "The palette has five colours: cream for the background, sand for the cards, tan behind the food photos, cocoa for buttons and the tab bar, and black for headings and icons. Headings are set in Outfit and end with a full stop, and body text is in Inter. Buttons and the tab bar are pill-shaped, and the plates break out over the edges of their cards." },
       ],
       gallery: [
         { src: "images/work/food-delivery-app/01.jpg", alt: "All five app screens in order, from menu to order placed",                  size: "full" },
@@ -226,10 +226,10 @@ window.KAIRO_WORK = (() => {
       services: ["UI design", "Prototyping", "Responsive design"],
       cover: "images/work/cinenebula/cover.jpg",
       sections: [
-        { heading: "Overview", body: "CineNebula is a streaming service concept: a featured-title screen for a film and series platform, designed for desktop and mobile. It was a self-initiated project, made to sharpen prototyping skills." },
-        { heading: "Design", body: "One title takes the whole first screen, with its artwork, likes, year, genre and age rating. Season and episode dropdowns, Play Now and My Wishlist sit beside it, and a row of other titles runs along the bottom." },
-        { heading: "Visual language", body: "A near-black background with a deep green glow rising from the bottom, and one brighter green kept for the likes rating. Text is set in Outfit in white, and the buttons and dropdowns use the same dark green." },
-        { heading: "Mobile", body: "On a phone the same content restacks. The artwork comes first, a menu button and search bar replace the navigation links, and the season and episode selectors share one row." },
+        { heading: "Overview", body: "CineNebula is a concept for a film and series streaming service. We designed its featured-title screen for desktop and mobile as a self-initiated project, mainly to sharpen our prototyping skills." },
+        { heading: "Design", body: "A single title fills the first screen, with its artwork, likes, year, genre and age rating. The season and episode dropdowns, Play Now and My Wishlist sit next to it, and a row of other titles runs along the bottom." },
+        { heading: "Visual language", body: "The background is almost black, with a deep green glow rising from the bottom of the screen. A brighter green is saved for the likes rating. All text is white and set in Outfit, and the buttons and dropdowns share the same dark green." },
+        { heading: "Mobile", body: "On a phone, the same content is stacked differently. The artwork comes first, a menu button and search bar take the place of the navigation links, and the season and episode selectors sit side by side on one row." },
       ],
       gallery: [
         { src: "images/work/cinenebula/01.jpg", alt: "CineNebula desktop screen with four numbered callouts",                   size: "full" },
