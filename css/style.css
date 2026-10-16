@@ -386,7 +386,7 @@ body.is-loaded .hero__actions { opacity: 1; transform: none; }
 .svc { border-top: 1px solid var(--line); }
 .svc__item { border-bottom: 1px solid var(--line); }
 .svc__row {
-  width: 100%; display: grid; grid-template-columns: 64px 1fr 40px; align-items: center; gap: 16px;
+  width: 100%; display: grid; grid-template-columns: 1fr 40px; align-items: center; gap: 16px;
   padding: clamp(20px, 3vw, 36px) 0; text-align: left;
 }
 .svc__num { font-size: 11px; letter-spacing: .14em; color: var(--gold); }
@@ -397,13 +397,12 @@ body.is-loaded .hero__actions { opacity: 1; transform: none; }
 .svc__icon::after { transform: rotate(90deg); }
 .svc__row[aria-expanded="true"] .svc__icon::after { transform: rotate(0); }
 .svc__body { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .6s var(--ease); }
-.svc__body > div { overflow: hidden; padding-left: 80px; max-width: 760px; }
+.svc__body > div { overflow: hidden; max-width: 760px; }
 .svc__body p:first-child { font-size: clamp(17px, 1.6vw, 21px); line-height: 1.5; margin-bottom: 14px; }
 .svc__item.is-open .svc__body { grid-template-rows: 1fr; }
 .svc__item.is-open .svc__body > div { padding-bottom: 36px; }
 @media (max-width: 700px) {
-  .svc__row { grid-template-columns: 36px 1fr 24px; }
-  .svc__body > div { padding-left: 52px; }
+  .svc__row { grid-template-columns: 1fr 24px; }
 }
 
 /* ---------- Paths ---------- */
