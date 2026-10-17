@@ -6,7 +6,7 @@
    1. Put its images in  images/work/<project-id>/  (jpg, png, webp or svg).
    2. Edit the project below: title, client, year, text and the image list.
    3. To add a new project, copy one { ... } block, give it a new id and set
-      its category to "branding", "web" or "motion".
+      its category to "branding" or "web".
 
    Gallery sizes: "full" spans the page width, "half" sits two across.
    Gallery items can also be videos: { type: "video", src: "images/work/x/clip.mp4" }
@@ -29,14 +29,6 @@ window.KAIRO_WORK = (() => {
       title: "Web Designs",
       tag: "Designing",
       intro: "Websites and apps, designed around the people who use them.",
-    },
-    {
-      id: "motion",
-      page: "motion-graphics.html",
-      index: "03",
-      title: "Movin' Elements",
-      tag: "Motion Graphics",
-      intro: "Logo animations, social videos and explainers for brands that need to move on screen.",
     },
   ];
 
@@ -240,9 +232,6 @@ window.KAIRO_WORK = (() => {
       ],
     },
 
-    project("logo-animation", "motion", "Logo Animation", "Motion identity", ["Motion design", "Sound", "Export kit"]),
-    project("social-campaign", "motion", "Social Campaign", "Social motion", ["Concept", "Motion design", "Edits"]),
-    project("product-explainer", "motion", "Product Explainer", "Explainer", ["Script", "Storyboard", "Animation"]),
   ];
 
   return { categories, projects };
