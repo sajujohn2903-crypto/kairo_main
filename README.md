@@ -9,7 +9,6 @@ kairo-site/
 ├── index.html      The homepage (all sections)
 ├── branding.html   "Get Branded!" projects
 ├── web-design.html "Web Designs" projects
-├── motion-graphics.html  "Movin' Elements" projects
 ├── project.html    One case-study page that shows any project (project.html?p=<id>)
 ├── 404.html        "Page not found" page — GitHub Pages uses it automatically
 ├── css/style.css   All styles, colours and layout
@@ -31,7 +30,7 @@ The three work pages and every case study are built from `js/projects.js`, so yo
 1. Put the project's images in `images/work/<project-id>/`. JPG, PNG, WebP and SVG all work. Keep photos around 2000px wide and under about 500 KB each so pages load quickly.
 2. In `js/projects.js`, find the project and change its `title`, `client`, `year`, `services`, `cover` and the four text sections (`Overview`, `The challenge`, `Our approach`, `The result`).
 3. List its images in `gallery`. `"full"` spans the page width and `"half"` sits two across. A video works too: `{ type: "video", src: "images/work/<id>/clip.mp4" }`.
-4. To add a new project, copy one project block, give it a new `id` and set `category` to `"branding"`, `"web"` or `"motion"`. It appears on the right page automatically.
+4. To add a new project, copy one project block, give it a new `id` and set `category` to `"branding"` or `"web"`. It appears on the right page automatically.
 
 The images in `images/work/` now are placeholders marked "PLACEHOLDER". Replace them with your real work before going live.
 
